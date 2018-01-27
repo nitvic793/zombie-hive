@@ -25,6 +25,7 @@ public class FollowLeader : MonoBehaviour
         {
             case StatesEnum.Walking:
                 GoToMousePositionIfLeader();
+                GoToSoldierIfNearby();
                 break;
             case StatesEnum.Dead:
                 navMesh.enabled = false;
@@ -43,11 +44,39 @@ public class FollowLeader : MonoBehaviour
     {
         if(Health>0.0F)
         {
-            //walk or attack
+            state = StatesEnum.Walking;
+            AttackSoldierIfNearby();
         }
         else
         {
             state = StatesEnum.Dead;
+        }
+    }
+
+    void GoToSoldierIfNearby()
+    {
+        var soldiers = GameObject.FindGameObjectsWithTag("Soldier");
+        foreach(var soldier in soldiers)
+        {
+            var distance = Vector3.Distance(soldier.transform.position, transform.position);
+            if(distance<30.0f)
+            {
+                navMesh.destination = soldier.transform.position;
+                break;
+            }
+        }
+    }
+
+    void AttackSoldierIfNearby()
+    {
+        var soldiers = GameObject.FindGameObjectsWithTag("Soldier");
+        foreach (var soldier in soldiers)
+        {
+            var distance = Vector3.Distance(soldier.transform.position, transform.position);
+            if (distance < 4.0f)
+            {
+                state = StatesEnum.Attacking;   
+            }
         }
     }
 
