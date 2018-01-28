@@ -1053,9 +1053,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
-  muzzleFlash: {fileID: 0}
+  muzzleFlash: {fileID: 100000, guid: 8eaaa4f553116f44b8459bc24201c514, type: 2}
   hitRate: 35
-  Ammo: 16
+  Ammo: 10
   navMeshAgent: {fileID: 0}
   zombiePrefab: {fileID: 1393808332766568, guid: bde4a86e29e1eb94189879edb73e1cb0,
     type: 2}
