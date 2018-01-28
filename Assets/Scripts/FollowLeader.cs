@@ -11,7 +11,7 @@ public class FollowLeader : MonoBehaviour
     public float Health = 100.0f;
     bool isAttacking = false;
     public StatesEnum state = StatesEnum.Walking;
-    const float FOLLOW_THRESHOLD = 15.0f;
+    const float FOLLOW_THRESHOLD = 8.0f;
     const float ATTACK_THRESHOLD = 2.0f;
     public float HitRate = 3.0f;
     public float hitTime = 0F;

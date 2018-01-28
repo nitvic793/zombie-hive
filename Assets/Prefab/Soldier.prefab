@@ -1054,7 +1054,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 100
   muzzleFlash: {fileID: 0}
-  hitRate: 50
+  hitRate: 35
+  Ammo: 16
+  navMeshAgent: {fileID: 0}
+  zombiePrefab: {fileID: 1393808332766568, guid: bde4a86e29e1eb94189879edb73e1cb0,
+    type: 2}
 --- !u!137 &137475143734720698
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

@@ -9,6 +9,7 @@ namespace Assets.Scripts
     {
         Walking,
         Attacking,
-        Dead
+        Dead,
+        Idle
     }
 }
