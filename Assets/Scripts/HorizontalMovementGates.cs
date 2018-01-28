@@ -22,7 +22,7 @@ public class HorizontalMovementGates : MonoBehaviour {
             {
                 if (transform.position.x < finalPosition.x)
                 {
-                    transform.position = new Vector3(transform.position.x + (Time.deltaTime * 0.18f), transform.position.y, transform.position.z);
+                    transform.position = new Vector3(transform.position.x + (Time.deltaTime * 0.13f), transform.position.y, transform.position.z);
                 }
                 else
                     moved = true;

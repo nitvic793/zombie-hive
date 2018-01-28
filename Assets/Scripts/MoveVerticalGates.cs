@@ -27,7 +27,7 @@ public class MoveVerticalGates : MonoBehaviour
             {
                 if (transform.position.z < finalPosition.z)
                 {
-                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (Time.deltaTime * 0.18f));
+                    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + (Time.deltaTime * 0.13f));
                 }
                 else
                     moved = true;
