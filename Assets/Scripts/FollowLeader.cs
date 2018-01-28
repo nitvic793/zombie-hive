@@ -75,8 +75,11 @@ public class FollowLeader : MonoBehaviour
         var soldiers = GameObject.FindGameObjectsWithTag("Soldier");
         foreach (var soldier in soldiers)
         {
+            var direction = (soldier.transform.position - transform.position).normalized;
+            RaycastHit hit;
+            Physics.Raycast(transform.position, direction, out hit);
             var distance = Vector3.Distance(soldier.transform.position, transform.position);
-            if (distance < FOLLOW_THRESHOLD && soldier.GetComponent<SoldierScript>().Health > 0F)
+            if (distance < FOLLOW_THRESHOLD && soldier.GetComponent<SoldierScript>().Health > 0F && hit.transform.tag == "Zombie")
             {
                 navMesh.destination = soldier.transform.position;
                 break;
