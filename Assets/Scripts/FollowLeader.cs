@@ -11,6 +11,10 @@ public class FollowLeader : MonoBehaviour
     public float Health = 100.0f;
     bool isAttacking = false;
     public StatesEnum state = StatesEnum.Walking;
+    const float FOLLOW_THRESHOLD = 15.0f;
+    const float ATTACK_THRESHOLD = 2.0f;
+    public float HitRate = 2.0f;
+    public float hitTime = 0F;
 
     void Start()
     {
@@ -25,6 +29,7 @@ public class FollowLeader : MonoBehaviour
         {
             case StatesEnum.Walking:
                 GoToMousePositionIfLeader();
+                GoToSoldierIfNearby();
                 break;
             case StatesEnum.Dead:
                 navMesh.enabled = false;
@@ -43,11 +48,46 @@ public class FollowLeader : MonoBehaviour
     {
         if(Health>0.0F)
         {
-            //walk or attack
+            state = StatesEnum.Walking;
+            AttackSoldierIfNearby();
         }
         else
         {
             state = StatesEnum.Dead;
+        }
+    }
+
+    void GoToSoldierIfNearby()
+    {
+        var soldiers = GameObject.FindGameObjectsWithTag("Soldier");
+        foreach(var soldier in soldiers)
+        {
+            var distance = Vector3.Distance(soldier.transform.position, transform.position);
+            if(distance<FOLLOW_THRESHOLD)
+            {
+                navMesh.destination = soldier.transform.position;
+                break;
+            }
+        }
+    }
+
+    void AttackSoldierIfNearby()
+    {
+        hitTime += Time.deltaTime;
+        var soldiers = GameObject.FindGameObjectsWithTag("Soldier");
+        foreach (var soldier in soldiers)
+        {
+            var soldierScript = soldier.GetComponent<SoldierScript>();
+            var distance = Vector3.Distance(soldier.transform.position, transform.position);
+            if (distance < ATTACK_THRESHOLD)
+            {
+                if (hitTime > 1F)
+                {
+                    soldierScript.InflictDamage(HitRate);
+                    hitTime = 0F;
+                }
+                state = StatesEnum.Attacking;   
+            }
         }
     }
 
