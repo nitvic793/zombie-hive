@@ -15,16 +15,24 @@ public class FollowLeader : MonoBehaviour
     const float ATTACK_THRESHOLD = 2.0f;
     public float HitRate = 3.0f;
     public float hitTime = 0F;
+    float totalTime = 0F;
 
     void Start()
     {
+        
         navMesh = GetComponent<NavMeshAgent>();
     }
 
     void Update()
     {
+        totalTime += Time.deltaTime;
         isAttacking = false;
         UpdateState();
+        if(totalTime>2F)
+        {
+            totalTime = 0F;
+            
+        }
         switch (state)
         {
             case StatesEnum.Walking:

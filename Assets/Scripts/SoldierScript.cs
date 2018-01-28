@@ -8,7 +8,7 @@ public class SoldierScript : MonoBehaviour {
     float totalTime = 0F;
     public GameObject muzzleFlash;
     List<GameObject> muzzleFlashes = new List<GameObject>();
-    public float hitRate = 50F;
+    public float hitRate = 20F;
 	// Use this for initialization
 	void Start () {
 		
@@ -36,6 +36,7 @@ public class SoldierScript : MonoBehaviour {
 
         if (minZombie != null)
         {
+            
             var direction = Vector3.Normalize(minZombie.transform.position - transform.position);
             //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), 1F);
             var angle = Vector3.Angle(transform.position, minZombie.transform.position);
@@ -43,6 +44,7 @@ public class SoldierScript : MonoBehaviour {
 
             if (totalTime > 2F)
             {
+                GetComponent<AudioSource>().Play();
                 minZombie.GetComponent<FollowLeader>().InflictDamage(hitRate);
                 totalTime = 0F;
                 muzzleFlashes.Add(Instantiate(muzzleFlash, transform));

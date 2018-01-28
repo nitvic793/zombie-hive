@@ -1442,6 +1442,9 @@ MonoBehaviour:
   isLeader: 1
   Health: 100
   state: 0
+  HitRate: 3
+  hitTime: 0
+  audioSource: {fileID: 8300000, guid: 2d5234ad966d66945889c29565a28851, type: 3}
 --- !u!136 &136356784428759776
 CapsuleCollider:
   m_ObjectHideFlags: 1
