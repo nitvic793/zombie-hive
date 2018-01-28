@@ -8,7 +8,7 @@ public class SoldierScript : MonoBehaviour {
     float totalTime = 0F;
     public GameObject muzzleFlash;
     List<GameObject> muzzleFlashes = new List<GameObject>();
-    public float hitRate = 35F;
+    public float hitRate = 50F;
 	// Use this for initialization
 	void Start () {
 		
