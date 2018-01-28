@@ -16,6 +16,7 @@ public class SoldierScript : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public GameObject zombiePrefab;
     const float MIN_LOS_DISTANCE = 25.0f;
+    public bool isEscaped = false;
 
     // Use this for initialization
     void Start()
@@ -83,6 +84,7 @@ public class SoldierScript : MonoBehaviour
             var parentTransform = GameObject.Find("Zombies") == null ? null : GameObject.Find("Zombies").transform;
             Instantiate(zombiePrefab, transform.position, transform.rotation, parentTransform);
             gameObject.SetActive(false);
+            GameObject.Find("GameManager").GetComponent<GameManager>().SoldiersKilled++;
         }
         else
         {
@@ -102,6 +104,12 @@ public class SoldierScript : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("Running", true);
         navMeshAgent.destination = GameObject.Find("Exit").transform.position;
+        if(Vector3.Distance(GameObject.Find("Exit").transform.position, transform.position)<1.5F)
+        {
+            gameObject.SetActive(false);
+            isEscaped = true;
+            GameObject.Find("GameManager").GetComponent<GameManager>().SoldiersEscaped++;
+        }
     }
 
     public void InflictDamage(float damage)
