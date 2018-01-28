@@ -13,7 +13,7 @@ public class FollowLeader : MonoBehaviour
     public StatesEnum state = StatesEnum.Walking;
     const float FOLLOW_THRESHOLD = 15.0f;
     const float ATTACK_THRESHOLD = 2.0f;
-    public float HitRate = 2.0f;
+    public float HitRate = 3.0f;
     public float hitTime = 0F;
 
     void Start()
@@ -25,7 +25,7 @@ public class FollowLeader : MonoBehaviour
     {
         isAttacking = false;
         UpdateState();
-        switch(state)
+        switch (state)
         {
             case StatesEnum.Walking:
                 GoToMousePositionIfLeader();
@@ -39,14 +39,13 @@ public class FollowLeader : MonoBehaviour
                 isAttacking = true;
                 break;
         }
-        if (isAttacking) Debug.Log(name);
         GetComponentInChildren<Animator>().SetFloat("Health", Health);
         GetComponentInChildren<Animator>().SetBool("Attacking", isAttacking);
     }
 
     void UpdateState()
     {
-        if(Health>0.0F)
+        if (Health > 0.0F)
         {
             state = StatesEnum.Walking;
             AttackSoldierIfNearby();
@@ -57,13 +56,19 @@ public class FollowLeader : MonoBehaviour
         }
     }
 
+    public void InflictDamage(float damage)
+    {
+        Health -= damage;
+        Health = Mathf.Clamp(Health, 0, 100);
+    }
+
     void GoToSoldierIfNearby()
     {
         var soldiers = GameObject.FindGameObjectsWithTag("Soldier");
-        foreach(var soldier in soldiers)
+        foreach (var soldier in soldiers)
         {
             var distance = Vector3.Distance(soldier.transform.position, transform.position);
-            if(distance<FOLLOW_THRESHOLD)
+            if (distance < FOLLOW_THRESHOLD && soldier.GetComponent<SoldierScript>().Health > 0F)
             {
                 navMesh.destination = soldier.transform.position;
                 break;
@@ -86,7 +91,7 @@ public class FollowLeader : MonoBehaviour
                     soldierScript.InflictDamage(HitRate);
                     hitTime = 0F;
                 }
-                state = StatesEnum.Attacking;   
+                state = StatesEnum.Attacking;
             }
         }
     }
