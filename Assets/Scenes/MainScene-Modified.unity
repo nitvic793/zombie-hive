@@ -632,7 +632,7 @@ Transform:
   m_LocalScale: {x: 8.062798, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &115064884
 MonoBehaviour:
@@ -1094,7 +1094,7 @@ GameObject:
   - component: {fileID: 372925517}
   - component: {fileID: 372925518}
   m_Layer: 0
-  m_Name: Gate3
+  m_Name: VerticalGate4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1160,11 +1160,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 372925512}
   m_LocalRotation: {x: 0, y: -0.70720553, z: 0, w: 0.707008}
-  m_LocalPosition: {x: -14.97, y: 0.79999995, z: 19.18}
+  m_LocalPosition: {x: -15.24, y: 0.79999995, z: 19.18}
   m_LocalScale: {x: 4.906908, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 58
+  m_RootOrder: 60
   m_LocalEulerAnglesHint: {x: 0, y: -90.01601, z: 0}
 --- !u!208 &372925517
 NavMeshObstacle:
@@ -1376,7 +1376,7 @@ Transform:
   m_LocalScale: {x: 8.062798, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 59
+  m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &422960334
 MonoBehaviour:
@@ -1656,7 +1656,7 @@ GameObject:
   - component: {fileID: 594875913}
   - component: {fileID: 594875918}
   m_Layer: 0
-  m_Name: Gate1 (4)
+  m_Name: VerticalGate6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1737,7 +1737,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 594875912}
   m_LocalRotation: {x: 0, y: -0.70720553, z: 0, w: 0.707008}
-  m_LocalPosition: {x: -12, y: 0.79999995, z: -33}
+  m_LocalPosition: {x: -11.82, y: 0.79999995, z: -33.27}
   m_LocalScale: {x: 6.7914557, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1984,11 +1984,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 764540719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -35.9, y: 0.79999995, z: 25.3}
+  m_LocalPosition: {x: -35.9, y: 0.79999995, z: 25.39}
   m_LocalScale: {x: 7.088183, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 57
+  m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &764540725
 MonoBehaviour:
@@ -2772,7 +2772,7 @@ GameObject:
   - component: {fileID: 1169679702}
   - component: {fileID: 1169679707}
   m_Layer: 0
-  m_Name: Gate1 (2)
+  m_Name: VerticalGate1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2853,11 +2853,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1169679701}
   m_LocalRotation: {x: 0, y: -0.70720553, z: 0, w: 0.707008}
-  m_LocalPosition: {x: 18.1, y: 0.79999995, z: 6.5}
+  m_LocalPosition: {x: 18.1, y: 0.79999995, z: 6.85}
   m_LocalScale: {x: 6.7914557, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 53
+  m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: -90.01601, z: 0}
 --- !u!114 &1169679707
 MonoBehaviour:
@@ -2970,7 +2970,7 @@ Transform:
   m_LocalScale: {x: 8.062798, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 61
+  m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1221028260
 MonoBehaviour:
@@ -4401,7 +4401,7 @@ GameObject:
   - component: {fileID: 1574575122}
   - component: {fileID: 1574575127}
   m_Layer: 0
-  m_Name: Gate1 (1)
+  m_Name: VerticalGate2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4482,11 +4482,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1574575121}
   m_LocalRotation: {x: 0, y: -0.70720553, z: 0, w: 0.707008}
-  m_LocalPosition: {x: 18.1, y: 0.79999995, z: 29.4}
+  m_LocalPosition: {x: 18.1, y: 0.79999995, z: 29.67}
   m_LocalScale: {x: 6.7914557, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 54
+  m_RootOrder: 58
   m_LocalEulerAnglesHint: {x: 0, y: -90.01601, z: 0}
 --- !u!114 &1574575127
 MonoBehaviour:
@@ -4900,7 +4900,7 @@ GameObject:
   - component: {fileID: 1662242576}
   - component: {fileID: 1662242581}
   m_Layer: 0
-  m_Name: Gate1 (3)
+  m_Name: VerticalGate5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4981,11 +4981,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1662242575}
   m_LocalRotation: {x: 0, y: -0.70720553, z: 0, w: 0.707008}
-  m_LocalPosition: {x: 18.1, y: 0.79999995, z: -38}
+  m_LocalPosition: {x: 18.1, y: 0.79999995, z: -37.47}
   m_LocalScale: {x: 6.7914557, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 60
+  m_RootOrder: 61
   m_LocalEulerAnglesHint: {x: 0, y: -90.01601, z: 0}
 --- !u!114 &1662242581
 MonoBehaviour:
@@ -5582,7 +5582,7 @@ GameObject:
   - component: {fileID: 1921093634}
   - component: {fileID: 1921093639}
   m_Layer: 0
-  m_Name: Gate1
+  m_Name: VerticalGate3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5667,7 +5667,7 @@ Transform:
   m_LocalScale: {x: 6.7914557, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 55
+  m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: -90.01601, z: 0}
 --- !u!114 &1921093639
 MonoBehaviour:

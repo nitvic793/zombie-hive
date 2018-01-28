@@ -16,7 +16,6 @@ public class CopMovement : MonoBehaviour
     void checkRadius(Vector3 center)
     {
         var zombies = GameObject.FindGameObjectsWithTag("Zombie");
-        int i = 0;
         foreach (var zombie in zombies)
         {
             float maxRange = 6;

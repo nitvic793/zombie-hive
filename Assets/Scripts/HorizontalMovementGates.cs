@@ -16,15 +16,40 @@ public class HorizontalMovementGates : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (moveNow && !moved)
+        if (moveNow)
         {
-            if (transform.position.x < finalPosition.x)
+            if (!moved)
             {
-                transform.position = new Vector3(transform.position.x + Time.deltaTime, transform.position.y, transform.position.z);
+                if (transform.position.x < finalPosition.x)
+                {
+                    transform.position = new Vector3(transform.position.x + (Time.deltaTime * 0.18f), transform.position.y, transform.position.z);
+                }
+                else
+                    moved = true;
             }
-            else
-                moved = true;
+        }
+        else
+        {
+            checkTrigger();
         }
     }
 
-}
+    void checkTrigger()
+    {
+        var zombies = GameObject.FindGameObjectsWithTag("Zombie");
+        foreach (var zombie in zombies)
+        {
+            float range = 6.0f;
+            if ((transform.position.z - 0.5 < zombie.transform.position.z) &&
+                (transform.position.z + 0.5 > zombie.transform.position.z))
+            {
+                if (((transform.position.x) < (zombie.transform.position.x)) &&
+                    ((transform.position.x + range) > (zombie.transform.position.x)))
+                {
+                    moveNow = true;
+                }
+            }
+        }
+    }
+
+    }
